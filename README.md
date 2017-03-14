@@ -110,7 +110,7 @@ which will return the specified location object if the data exists (in the respo
 ### PlaceSearch
 
 The GeoNamesAPI search. you can see more details at http://www.geonames.org/export/geonames-search.html
-  
+
   Examples:
 
     FIND:
@@ -143,10 +143,10 @@ The GeoNamesAPI search. you can see more details at http://www.geonames.org/expo
 
 ### Country
 
-The geonames api uses the ISO code of the country as its natural key. 
+The geonames api uses the ISO code of the country as its natural key.
 
     > GeoNamesAPI::Endpoint::Country.find("US")
-    
+
     => #<GeoNamesAPI::Endpoint::Country:0x007fd43503dfc0
           @country_code="US",
           @country_name="United States",
@@ -168,22 +168,16 @@ The geonames api uses the ISO code of the country as its natural key.
         >
 
     > GeoNamesAPI::Country.all
-    
-    => ... array of GeoNamesAPI::Country instances
-    
-The [postal code exports](http://download.geonames.org/export/zip/) are also available for each country either in string of ruby CSV form.
 
-    # String
-    > GeoNamesAPI::Country.find("US").postal_code_export
-    # CSV::Table
-    > GeoNamesAPI::Country.find("US").postal_code_csv
+    => ... array of GeoNamesAPI::Country instances
+
 
 ### Weather
 
 The GeoNamesAPI uses the latitude and longitude of the place as the parameters for its weather service.
 
     > weather = GeoNamesAPI::Endpoint::Weather.find(41.88,-87.68)
-    
+
     => #<GeoNamesAPI::Endpoint::Weather:0x007fab1c80dc10
           @latitude=41.88,
           @longitude=-87.68,
@@ -205,7 +199,7 @@ The GeoNamesAPI uses the latitude and longitude of the place as the parameters f
           @datetime="2012-11-01 20:51:00",
           @lat=41.78333333333333
         >
-    
+
 The following instance methods are also available:
 
     > weather.geo_names_api_country
@@ -226,7 +220,7 @@ The following instance methods are also available:
 The GeoNamesAPI uses the latitude and longitude of the place as the parameters for its time zone service.
 
     > time_zone = GeoNamesAPI::TimeZone.find(41.88,-87.68)
-    
+
     => #<GeoNamesAPI::Endpoint::TimeZone:0x007fd4b24d7e00
           @time="2012-11-02 12:04",
           @country_name="United States",
@@ -269,7 +263,7 @@ Please note the use of the `all` method with `GeoNamesAPI::Endpoint::Wikipedia`.
             @lng=-87.6827,
             @lang="en",
             @lat=41.8769>,
-          ...] 
+          ...]
 
 ### Others
 
